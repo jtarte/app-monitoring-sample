@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: stockquote-monitor
+  labels:
+    k8s-app: stockquote-monitor
+  namespace: prometheus-operator
+spec:
+  namespaceSelector:
+    matchNames:
+      - stockquote
+  selector:
+    matchNames:
+      - stockquote
+  endpoints:
+    - interval: 30s
+      path: /metrics
+      port: 3000-tcp
