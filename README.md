@@ -16,4 +16,6 @@ If you have already a prometheus/ Grafana instances available, the two files tha
 
 Warning: the `ServiceMonitor` should define a label to be identified by prometheus. here it is `k8s-app: stockquote-monitor`. The Prometheus instance of our example is looking for a key : `k8s-app`.
 
+Warning: the namespace used for this sample is : prometheus-operator. 
+
 ref: https://kabanero.io/guides/app-monitoring-ocp4.2/
